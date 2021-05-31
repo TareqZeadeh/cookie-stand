@@ -523,7 +523,7 @@ function footer() {
 
 
 
-let ubai = new Store('Seattel', 23, 65, 6.3);
+let seattel = new Store('Seattel', 23, 65, 6.3);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);
 let dubai = new Store('Dubai', 11, 38, 3.7);
 let paris = new Store('Paris', 20, 38, 2.3);

@@ -416,6 +416,7 @@ function randomNumber(min, max) {
 
 
 let stores = [];
+let magicenum = stores.length - 1;
 
 
 function Store(name, mincust, maxcust, avgcookiesale) {
@@ -427,6 +428,7 @@ function Store(name, mincust, maxcust, avgcookiesale) {
   this.avgcookiesperhour = [];
   this.total = 0;
   stores.push(this);
+
 }
 
 Store.prototype.randomcustperhour = function () {
@@ -490,8 +492,11 @@ Store.prototype.render = function () {
   cityrow.appendChild(lasttdelement);
   lasttdelement.textContent = this.total;
 
-
 };
+
+
+
+
 
 function footer() {
 
@@ -500,27 +505,30 @@ function footer() {
   let firstelement = document.createElement('th');
   lastrow.appendChild(firstelement);
   firstelement.textContent = 'Totals';
-  let dailylocationtotal=0;
+  let dailylocationtotal = 0;
+  let total2 = 0;
   for (let i = 0; i < hour.length; i++) {
     let totalperhour = 0;
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < stores.length; j++) {
 
       totalperhour = totalperhour + stores[j].avgcookiesperhour[i];
-
+      total2 = total2 + totalperhour;
 
     }
     let thelement = document.createElement('th');
     lastrow.appendChild(thelement);
     thelement.textContent = totalperhour;
-    console.log(totalperhour);
-    dailylocationtotal=dailylocationtotal+totalperhour;
-  }
-
+    //console.log(totalperhour);
+    dailylocationtotal = dailylocationtotal + total2;
+    totalperhour=0;
+    dailylocationtotal=0;
+}
   let lastelement = document.createElement('th');
   lastrow.appendChild(lastelement);
   lastelement.textContent = dailylocationtotal;
-}
+  dailylocationtotal = 0;
 
+}
 
 
 let seattel = new Store('Seattel', 23, 65, 6.3);
@@ -538,3 +546,41 @@ for (let i = 0; i < stores.length; i++) {
 }
 
 footer();
+
+
+let newstore = document.getElementById('newstore');
+newstore.addEventListener('submit', submitter);
+
+function submitter(event) {
+
+  event.preventDefault();
+  console.log(event);
+  let name = event.target.namefield.value;
+  let mincust = event.target.mincust.value;
+  let maxcust = event.target.maxcust.value;
+  let avgcookis = event.target.avgcookis.value;
+  let addnewcity = new Store(name, mincust, maxcust, avgcookis);
+
+
+
+  table.deleteRow(magicenum);
+  addnewcity.randomcustperhour();
+  addnewcity.avgcookies();
+  addnewcity.render();
+  console.log(addnewcity.custperhour);
+  console.log(addnewcity.avgcookiesperhour);
+  footer();
+  console.log(stores);
+}
+
+
+
+// for (let i = 0; i < stores.length; i++) {
+//   stores[i].randomcustperhour();
+//   stores[i].avgcookies();
+//   stores[i].render();
+//   console.log(stores[i].custperhour);
+//   console.log(stores[i].avgcookiesperhour);
+
+// }
+

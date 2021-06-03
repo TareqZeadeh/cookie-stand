@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
 </head>
+
 <body>
-  <div id = "salmoncookies">
-<a href="index.html">HOME</a>
+  <div id="salmoncookies">
+    <a href="index.html">HOME</a>
 
 
-  </div> 
+
+
+
+  </div>
+
+
+  <form id="newstore">
+
+
+    <fieldset>
+
+      <label for="namefield">City Name (recuired)</label>
+      <input type="text" id="namefield" name="namefield" autocomplete="off" required >
+
+      <br><br>
+
+      <label for="mincust">minimum number of customers (recuired)</label>
+      <input type="number" name="mincust" id="mincust" required >
+
+      <br><br>
+
+      <label for="maxcust">maximum number of customers (recuired)</label>
+      <input type="number" name="maxcust" id="maxcust" required >
+
+      <br><br>
+
+      <label for="avgcookis">average sale of cookies (recuired)</label>
+      <input type="number"  name="avgcookis" id="avgcookis"  required>
+
+      <br><br>
+
+      <input type="submit" value="insert data" id="btn" >
+    </fieldset>
+  </form>
+
+
+
+
+
+
+
   <footer>
 
   </footer>
-  <script src="js/app.js"></script> 
+  <script src="js/app.js"></script>
 </body>
+
 </html>

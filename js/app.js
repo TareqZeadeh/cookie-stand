@@ -506,23 +506,22 @@ function footer() {
   lastrow.appendChild(firstelement);
   firstelement.textContent = 'Totals';
   let dailylocationtotal = 0;
-  let total2 = 0;
+
   for (let i = 0; i < hour.length; i++) {
     let totalperhour = 0;
     for (let j = 0; j < stores.length; j++) {
 
       totalperhour = totalperhour + stores[j].avgcookiesperhour[i];
-      total2 = total2 + totalperhour;
+
 
     }
     let thelement = document.createElement('th');
     lastrow.appendChild(thelement);
     thelement.textContent = totalperhour;
     //console.log(totalperhour);
-    dailylocationtotal = dailylocationtotal + total2;
-    totalperhour=0;
-    dailylocationtotal=0;
-}
+    dailylocationtotal = dailylocationtotal + totalperhour;
+
+  }
   let lastelement = document.createElement('th');
   lastrow.appendChild(lastelement);
   lastelement.textContent = dailylocationtotal;
@@ -556,9 +555,9 @@ function submitter(event) {
   event.preventDefault();
   console.log(event);
   let name = event.target.namefield.value;
-  let mincust = event.target.mincust.value;
-  let maxcust = event.target.maxcust.value;
-  let avgcookis = event.target.avgcookis.value;
+  let mincust =parseInt(event.target.mincust.value) ;
+  let maxcust = parseInt(event.target.maxcust.value);
+  let avgcookis =parseFloat(event.target.avgcookis.value) ;
   let addnewcity = new Store(name, mincust, maxcust, avgcookis);
 
 

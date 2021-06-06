@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+  }
+ 
+  body{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(129, 75, 4);
+  }
+  header{
+    background-color: rgb(104, 61, 4);
+    margin-bottom: 50px;
+
+  }
+  header img{
+  
+width: 200px;
+height: 50px;
+
+  }
+  header nav{
+      float: right;
+      display: inline;
+  }
+  header nav a{
+      padding-right: 10px;
+      color: rgb(139, 125, 44);
+      text-decoration: none;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: larger;
+  }
+  main{
+    background: url("/img/salmon2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:right;
+    background-color:rgb(104, 61, 4) ;
+  }
+  #newstore table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    
+  }
+  #salmoncookies{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: medium
+  }
+ 
+  .lable{
+    padding-right: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: larger;
+  }
+  .input{
+    background-color: rgb(58, 36, 7);  
+    color: chocolate;
+  }
+
+  #btn{
+    background-color: rgb(58, 36, 7); 
+    border:none;
+    color: chocolate;
+    padding: 10px 30px;
+    text-align: center;
+    display: inline-block;
+  }
+  footer{
+    clear: both;
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(104, 61, 4);
+    margin-top: 100px;
+  }
